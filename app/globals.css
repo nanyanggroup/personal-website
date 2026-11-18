@@ -1,3 +1,5 @@
+@import "@fontsource/noto-serif-sc/chinese-simplified-400.css";
+@import "@fontsource/noto-sans-sc/chinese-simplified-400.css";
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -5,6 +7,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+    --font-heading: "Noto Serif SC", "Songti SC", "SimSun", serif;
+    --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
     --background: oklch(1 0 0);
     --foreground: oklch(0.147 0.004 49.25);
     --card: oklch(1 0 0);
@@ -128,5 +132,11 @@
     }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
     }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 }
